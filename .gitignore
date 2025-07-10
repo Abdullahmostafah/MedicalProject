@@ -1,0 +1,90 @@
+### Build Directories ###
+### Ignore all target and build folders ###
+target/
+build/
+### Allow target/build inside src/main and src/test ###
+!src/main/**/target/
+!src/test/**/target/
+!src/main/**/build/
+!src/test/**/build/
+
+### Maven Wrapper ###
+!.mvn/wrapper/maven-wrapper.jar
+
+### Logs & Temp Files ###
+*.log
+*.tmp
+*.bak
+*.swp
+
+### Allure Results & Reports ###
+allure-results/
+allure-report/
+allure-history/ # used when publishing Allure to GitHub Pages
+.history/
+
+### IntelliJ IDEA ###
+.idea/
+.idea/modules.xml
+.idea/jarRepositories.xml
+.idea/compiler.xml
+.idea/libraries/
+*.iws
+*.iml
+*.ipr
+out/
+
+### Eclipse ##
+.apt_generated
+.classpath
+.factorypath
+.project
+.settings/
+.springBeans
+.sts4-cache
+
+### NetBeans ###
+/nbproject/private/
+/nbbuild/
+/dist/
+/nbdist/
+/.nb-gradle/
+
+### Visual Studio Code ###
+.vscode/
+
+### OS-Specific Files ###
+.DS_Store
+Thumbs.db
+
+### Test Coverage / Caches ###
+coverage/
+.cache/
+jacoco.exec
+
+### GitHub Actions ###
+.github/workflows/*.log
+.github/workflows/.DS_Store
+
+### Jenkins / CI Tools ###
+.pipeline/
+*.jenkinsfile
+*.groovy
+
+### Docker ###
+docker-compose.override.yml
+docker-compose*.log
+.docker/
+*.dockerfile
+.env
+.env.
+
+### Other (optional/advanced) ###
+*.class
+*.exe
+*.dll
+*.so
+*.dylib
+
+### System backup / metadata ###
+*.orig
