@@ -2,6 +2,7 @@
 <project xmlns="http://maven.apache.org/POM/4.0.0"
          xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
          xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+
     <modelVersion>4.0.0</modelVersion>
 
     <groupId>org.example</groupId>
@@ -9,131 +10,135 @@
     <version>1.0-SNAPSHOT</version>
 
     <properties>
+        <!-- Java and encoding setup -->
         <maven.compiler.source>21</maven.compiler.source>
         <maven.compiler.target>21</maven.compiler.target>
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
 
-        <allure.version>2.29.1</allure.version>
+        <!-- Versions for dependencies -->
         <restassured.version>5.5.5</restassured.version>
-        <junit.version>5.13.3</junit.version>
-        <junit4.version>4.13.2</junit4.version>
-        <jackson.version>2.19.1</jackson.version>
-        <poi.version>5.4.1</poi.version>
-        <slf4jversion>2.0.17</slf4jversion>
-
-        <maven.enforcer.version>3.0.0</maven.enforcer.version>
-        <allure.maven.plugin.version>2.11.2</allure.maven.plugin.version>
-        <surefire.plugin.version>3.1.2</surefire.plugin.version>
+        <testng.version>7.10.2</testng.version> <!-- Latest TestNG -->
+        <jackson.version>2.15.3</jackson.version>
+        <poi.version>5.2.5</poi.version>
+        <slf4j.version>2.0.13</slf4j.version>
+        <sql.version>12.6.1.jre11</sql.version>
+        <allure.version>2.29.1</allure.version>
+        <jakarta.mail.version>2.0.1</jakarta.mail.version>
     </properties>
 
-    <dependencyManagement>
-        <dependencies>
-            <dependency>
-                <groupId>io.qameta.allure</groupId>
-                <artifactId>allure-bom</artifactId>
-                <version>${allure.version}</version>
-                <scope>import</scope>
-                <type>pom</type>
-            </dependency>
-            <dependency>
-                <groupId>org.junit</groupId>
-                <artifactId>junit-bom</artifactId>
-                <version>${junit.version}</version>
-                <type>pom</type>
-                <scope>import</scope>
-            </dependency>
-        </dependencies>
-    </dependencyManagement>
-
     <dependencies>
-        <!-- REST-assured -->
+        <!-- REST Assured for API testing -->
         <dependency>
             <groupId>io.rest-assured</groupId>
             <artifactId>rest-assured</artifactId>
             <version>${restassured.version}</version>
         </dependency>
 
-        <!-- Jackson -->
+        <!-- Jackson for JSON handling -->
         <dependency>
             <groupId>com.fasterxml.jackson.core</groupId>
             <artifactId>jackson-databind</artifactId>
             <version>${jackson.version}</version>
         </dependency>
 
-        <!-- Apache POI -->
+        <!-- Apache POI for Excel support (if still used) -->
         <dependency>
             <groupId>org.apache.poi</groupId>
             <artifactId>poi-ooxml</artifactId>
             <version>${poi.version}</version>
         </dependency>
 
-        <!-- Allure -->
+        <!-- Allure support for TestNG -->
+        <dependency>
+            <groupId>io.qameta.allure</groupId>
+            <artifactId>allure-testng</artifactId>
+            <version>${allure.version}</version>
+            <scope>test</scope>
+        </dependency>
+
+        <!-- Allure REST Assured integration -->
         <dependency>
             <groupId>io.qameta.allure</groupId>
             <artifactId>allure-rest-assured</artifactId>
+            <version>${allure.version}</version>
             <scope>test</scope>
         </dependency>
+
+        <!-- TestNG (latest stable) -->
         <dependency>
-            <groupId>io.qameta.allure</groupId>
-            <artifactId>allure-junit5</artifactId>
+            <groupId>org.testng</groupId>
+            <artifactId>testng</artifactId>
+            <version>${testng.version}</version>
             <scope>test</scope>
         </dependency>
 
-        <!-- JUnit 5 -->
-        <dependency>
-            <groupId>org.junit.jupiter</groupId>
-            <artifactId>junit-jupiter</artifactId>
-            <version>${junit.version}</version>
-            <scope>test</scope>
-        </dependency>
-
-
-        <!-- SLF4J (Optional Logging) -->
+        <!-- SLF4J for logging -->
         <dependency>
             <groupId>org.slf4j</groupId>
             <artifactId>slf4j-simple</artifactId>
-            <version>${slf4jversion}</version>
+            <version>${slf4j.version}</version>
             <scope>test</scope>
+        </dependency>
+
+        <!-- SQL Server JDBC driver -->
+        <dependency>
+            <groupId>com.microsoft.sqlserver</groupId>
+            <artifactId>mssql-jdbc</artifactId>
+            <version>${sql.version}</version>
+        </dependency>
+
+        <dependency>
+            <groupId>com.sun.mail</groupId>
+            <artifactId>jakarta.mail</artifactId>
+            <version>${jakarta.mail.version}</version>
         </dependency>
     </dependencies>
 
     <build>
         <plugins>
+            <!-- Compiler plugin to use Java 21 with preview features -->
             <plugin>
                 <groupId>org.apache.maven.plugins</groupId>
-                <artifactId>maven-surefire-plugin</artifactId>
-                <version>${surefire.plugin.version}</version>
+                <artifactId>maven-compiler-plugin</artifactId>
+                <version>3.11.0</version>
                 <configuration>
-                    <useModulePath>false</useModulePath>
+                    <source>21</source>
+                    <target>21</target>
+                    <compilerArgs>
+                        <arg>--enable-preview</arg>
+                    </compilerArgs>
                 </configuration>
             </plugin>
 
+            <!-- Surefire to run TestNG tests -->
             <plugin>
-                <groupId>io.qameta.allure</groupId>
-                <artifactId>allure-maven</artifactId>
-                <version>${allure.maven.plugin.version}</version>
-                <executions>
-                    <execution>
-                        <id>generate-report</id>
-                        <phase>verify</phase>
-                        <goals><goal>report</goal></goals>
-                    </execution>
-                </executions>
+                <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-surefire-plugin</artifactId>
+                <version>3.2.5</version>
+                <configuration>
+                    <useModulePath>false</useModulePath>
+                    <suiteXmlFiles>
+                        <suiteXmlFile>TestNG.xml</suiteXmlFile> <!-- Add your suite if applicable -->
+                    </suiteXmlFiles>
+                </configuration>
             </plugin>
 
+            <!-- Enforce Java version -->
             <plugin>
                 <groupId>org.apache.maven.plugins</groupId>
                 <artifactId>maven-enforcer-plugin</artifactId>
-                <version>${maven.enforcer.version}</version>
+                <version>3.3.0</version>
                 <executions>
                     <execution>
                         <id>enforce-java</id>
-                        <goals><goal>enforce</goal></goals>
+                        <goals>
+                            <goal>enforce</goal>
+                        </goals>
                         <configuration>
                             <rules>
                                 <requireJavaVersion>
-                                    <version>[21,22]</version>
-                                    <message>Java 21 is required.</message>
+                                    <version>[21,22)</version>
+                                    <message>Java 21 is required</message>
                                 </requireJavaVersion>
                             </rules>
                         </configuration>

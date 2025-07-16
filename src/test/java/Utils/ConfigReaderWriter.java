@@ -18,12 +18,13 @@ public final class ConfigReaderWriter {
         }
     }
 
-    private ConfigReaderWriter() {} // Prevent instantiation
+    private ConfigReaderWriter() {
+    }
 
     public static String getPropKey(String key) {
         return properties.getProperty(key);
     }
-    //Set and save property (Thread-Safe)
+
     public static synchronized void setPropKey(String key, String value) {
         properties.setProperty(key, value);
         try (FileOutputStream fos = new FileOutputStream(CONFIG_PATH)) {

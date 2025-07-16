@@ -88,3 +88,7 @@ docker-compose*.log
 
 ### System backup / metadata ###
 *.orig
+
+### Ignore all folders (**) but allow .gitkeep files inside them ###
+**/
+!**/.gitkeep
