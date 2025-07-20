@@ -1,0 +1,193 @@
+[
+  {
+    "testCaseName": "01.Check adding a service with only mandatory attributes only",
+    "description": "Minimum required fields for successful creation",
+    "tags": [
+      "smoke",
+      "regression"
+    ],
+    "data": {
+      "code": "SVC_001",
+      "nameEn": "Service 001",
+      "titleEn": "Title 001",
+      "titleAr": "عنوان ١"
+    }
+  },
+  {
+    "testCaseName": "02.Check adding a service with mandatory and optional attributes and effective data in future",
+    "description": "All fields provided with valid future effective date",
+    "tags": [
+      "regression",
+      "full-coverage"
+    ],
+    "data": {
+      "code": "SVC_002",
+      "nameEn": "Service 002",
+      "nameAr": "خدمة ٢",
+      "titleEn": "Title 002",
+      "titleAr": "عنوان ٢",
+      "abbreviationEn": "SVC002",
+      "abbreviationAr": "خ٢",
+      "groupId": "04ee423e-f36b-1410-841a-0047d38b2221",
+      "specialtyId": "10ee423e-f36b-1410-841a-0047d38b2221",
+      "typeId": "1cee423e-f36b-1410-841a-0047d38b2221",
+      "statusId": 1,
+      "referenceAverageCost": 150.50,
+      "effectiveDate": "2025-12-31",
+      "customPropertyValues": [
+        "c3ee423e-f36b-1410-841a-0047d38b2221",
+        "d1ee423e-f36b-1410-841a-0047d38b2221"
+      ]
+    }
+  },
+  {
+    "testCaseName": "03.Check sending request with a used fields before",
+    "description": "Attempt to reuse an existing service attributes",
+    "tags": [
+      "negative",
+      "validation"
+    ],
+    "data": {
+      "code": "SVC_002",
+      "nameEn": "Service 002",
+      "nameAr": "خدمة ٢",
+      "titleEn": "Title 002",
+      "titleAr": "عنوان ٢",
+      "abbreviationEn": "SVC002",
+      "abbreviationAr": "خ٢",
+      "groupId": "04ee423e-f36b-1410-841a-0047d38b2221",
+      "specialtyId": "10ee423e-f36b-1410-841a-0047d38b2221",
+      "typeId": "1cee423e-f36b-1410-841a-0047d38b2221",
+      "statusId": 1,
+      "referenceAverageCost": 150.50,
+      "effectiveDate": "2025-12-31",
+      "customPropertyValues": [
+        "c3ee423e-f36b-1410-841a-0047d38b2221",
+        "d1ee423e-f36b-1410-841a-0047d38b2221"
+      ]
+    }
+  },
+  {
+    "testCaseName": "04. Missing mandatory fields (negative)",
+    "description": "Omit required fields (code, nameEn, titleEn, titleAr)",
+    "tags": [
+      "negative",
+      "validation"
+    ],
+    "data": {
+      "abbreviationEn": "AbbreviationEn02",
+      "abbreviationAr": "اختصار ع02",
+      "groupId": "04ee423e-f36b-1410-841a-0047d38b2221",
+      "specialtyId": "10ee423e-f36b-1410-841a-0047d38b2221",
+      "typeId": "1cee423e-f36b-1410-841a-0047d38b2221",
+      "statusId": 1,
+      "referenceAverageCost": 100,
+      "customPropertyValues": [
+        "c3ee423e-f36b-1410-841a-0047d38b2221",
+        "d1ee423e-f36b-1410-841a-0047d38b2221"
+      ]
+    }
+  },
+  {
+    "testCaseName": "05.Check exceeding max length for fields",
+    "description": "Fields exceed character limits (code:100, names/titles:100, abbreviations:25)",
+    "tags": [
+      "negative",
+      "validation"
+    ],
+    "data": {
+      "code": "AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
+      "nameEn": "BBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBB",
+      "nameAr": "تتتتتتتتتتتتتتتتتتتتتتتتتتتتتتتتتتتتتتتتتتتتتتتتتتتتتتتتتتتتتتتتتتتتتتتتتتتتتتتتتتتتتتتتتتتتتتتتتت",
+      "titleEn": "CCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCC",
+      "titleAr": "ثثثثثثثثثثثثثثثثثثثثثثثثثثثثثثثثثثثثثثثثثثثثثثثثثثثثثثثثثثثثثثثثثثثثثثثثثثثثثثثثثثثثثثثثثثثثثثثث",
+      "abbreviationEn": "DDDDDDDDDDDDDDDDDDDDDDDDDD",
+      "abbreviationAr": "جججججججججججججججججججججججججججج",
+      "groupId": "04ee423e-f36b-1410-841a-0047d38b2221",
+      "specialtyId": "10ee423e-f36b-1410-841a-0047d38b2221",
+      "typeId": "1cee423e-f36b-1410-841a-0047d38b2221",
+      "statusId": 1,
+      "referenceAverageCost": 100,
+      "effectiveDate": "2025-07-15",
+      "customPropertyValues": []
+    }
+  },
+  {
+    "testCaseName": "06.Check sending invalid reference cost (negative), invalid date format, custom property value, and effective date in the past.",
+    "description": "Expect validation errors for negative cost, invalid date format, and past effective date",
+    "tags": [
+      "negative",
+      "validation"
+    ],
+    "data": {
+      "code": "SVC_200",
+      "nameEn": "InvalidService200",
+      "nameAr": "خدمة_غير_صالحة_200",
+      "titleEn": "Invalid Title 200",
+      "titleAr": "عنوان غير صالح 200",
+      "abbreviationEn": "InvalidAbbr200",
+      "abbreviationAr": "اختصار غير صالح 200",
+      "groupId": "04ee423e-f36b-1410-841a-0047d38b2221",
+      "specialtyId": "10ee423e-f36b-1410-841a-0047d38b2221",
+      "typeId": "1cee423e-f36b-1410-841a-0047d38b2221",
+      "statusId": 1,
+      "referenceAverageCost": -10,
+      "effectiveDate": "2023-01-01",
+      "customPropertyValues": []
+    }
+  },
+  {
+    "testCaseName": "07.Check sending invalid custom property value, specialty, Group",
+    "description": "Expect validation errors for invalid custom property value, specialty, and group",
+    "tags": [
+      "negative",
+      "validation"
+    ],
+    "data": {
+      "code": "SVC_200",
+      "nameEn": "InvalidService200",
+      "nameAr": "خدمة_غير_صالحة_200",
+      "titleEn": "Invalid Title 200",
+      "titleAr": "عنوان غير صالح 200",
+      "abbreviationEn": "InvalidAbbr200",
+      "abbreviationAr": "اختصار غير صالح 200",
+      "groupId": "04ee423e-f36b-1410-841a-0047d38b2225",
+      "specialtyId": "10ee423e-f36b-1410-841a-0047d38b2226",
+      "typeId": "1cee423e-f36b-1410-841a-0047d38b2221",
+      "statusId": 10,
+      "referenceAverageCost": 10,
+      "effectiveDate": "2026-01-01",
+      "customPropertyValues": [
+        "c3ee423e-f36b-1410-841a-0047d38b2221",
+        "d1ee423e-f36b-1410-841a-0047d38b2224"
+      ]
+    }
+  },
+  {
+    "testCaseName": "09.Check sending request with soft deleted attributes",
+    "description": "Expect validation error for already deleted items",
+    "tags": [
+      "regression",
+      "full-coverage"
+    ],
+    "data": {
+      "code": "SVC_002",
+      "nameEn": "Service 002",
+      "nameAr": "خدمة ٢",
+      "titleEn": "Title 002",
+      "titleAr": "عنوان ٢",
+      "abbreviationEn": "SVC002",
+      "abbreviationAr": "خ٢",
+      "groupId": "04ee423e-f36b-1410-841a-0047d38b2221",
+      "specialtyId": "10ee423e-f36b-1410-841a-0047d38b2221",
+      "typeId": "1cee423e-f36b-1410-841a-0047d38b2221",
+      "statusId": 1,
+      "referenceAverageCost": 150.50,
+      "effectiveDate": "2025-12-31",
+      "customPropertyValues": [
+        "c3ee423e-f36b-1410-841a-0047d38b2221",
+        "d1ee423e-f36b-1410-841a-0047d38b2221"
+      ]
+    }
+  }
+]

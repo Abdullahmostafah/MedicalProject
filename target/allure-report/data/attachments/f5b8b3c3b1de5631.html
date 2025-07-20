@@ -1,0 +1,57 @@
+<div>POST to http://localhost:5251/api/Service/Insert</div>
+
+    <h4>Body</h4>
+    <div>
+    <pre class="preformated-text">
+{
+    &quot;code&quot;: &quot;SVC_002&quot;,
+    &quot;nameEn&quot;: &quot;Service 002&quot;,
+    &quot;nameAr&quot;: &quot;خدمة ٢&quot;,
+    &quot;titleEn&quot;: &quot;Title 002&quot;,
+    &quot;titleAr&quot;: &quot;عنوان ٢&quot;,
+    &quot;abbreviationEn&quot;: &quot;SVC002&quot;,
+    &quot;abbreviationAr&quot;: &quot;خ٢&quot;,
+    &quot;effectiveDate&quot;: &quot;2025-12-31&quot;,
+    &quot;groupId&quot;: &quot;15d0423e-f36b-1410-8420-0047d38b2221&quot;,
+    &quot;specialtyId&quot;: &quot;10ee423e-f36b-1410-841a-0047d38b2221&quot;,
+    &quot;typeId&quot;: &quot;1cee423e-f36b-1410-841a-0047d38b2221&quot;,
+    &quot;statusId&quot;: 1,
+    &quot;customPropertyValues&quot;: [
+        &quot;c3ee423e-f36b-1410-841a-0047d38b2221&quot;,
+        &quot;d1ee423e-f36b-1410-841a-0047d38b2221&quot;
+    ],
+    &quot;referenceAverageCost&quot;: 150.5
+}    </pre>
+    </div>
+
+    <h4>Headers</h4>
+    <div>
+            <div>Accept: */*</div>
+            <div>Content-Type: application/json</div>
+    </div>
+
+
+
+    <h4>Curl</h4>
+    <div>
+        curl -v -X POST &#39;http://localhost:5251/api/Service/Insert&#39; -H &#39;Accept: */*&#39; -H &#39;Content-Type: application/json&#39; -d &#39;{
+    &quot;code&quot;: &quot;SVC_002&quot;,
+    &quot;nameEn&quot;: &quot;Service 002&quot;,
+    &quot;nameAr&quot;: &quot;خدمة ٢&quot;,
+    &quot;titleEn&quot;: &quot;Title 002&quot;,
+    &quot;titleAr&quot;: &quot;عنوان ٢&quot;,
+    &quot;abbreviationEn&quot;: &quot;SVC002&quot;,
+    &quot;abbreviationAr&quot;: &quot;خ٢&quot;,
+    &quot;effectiveDate&quot;: &quot;2025-12-31&quot;,
+    &quot;groupId&quot;: &quot;15d0423e-f36b-1410-8420-0047d38b2221&quot;,
+    &quot;specialtyId&quot;: &quot;10ee423e-f36b-1410-841a-0047d38b2221&quot;,
+    &quot;typeId&quot;: &quot;1cee423e-f36b-1410-841a-0047d38b2221&quot;,
+    &quot;statusId&quot;: 1,
+    &quot;customPropertyValues&quot;: [
+        &quot;c3ee423e-f36b-1410-841a-0047d38b2221&quot;,
+        &quot;d1ee423e-f36b-1410-841a-0047d38b2221&quot;
+    ],
+    &quot;referenceAverageCost&quot;: 150.5
+}&#39;
+    </div>
+

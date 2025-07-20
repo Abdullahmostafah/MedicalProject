@@ -1,0 +1,151 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testsuite xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="https://maven.apache.org/surefire/maven-surefire-plugin/xsd/surefire-test-report.xsd" version="3.0.2" name="TestSuite" time="7.069" tests="1" errors="0" skipped="0" failures="0">
+  <properties>
+    <property name="java.specification.version" value="21"/>
+    <property name="sun.cpu.isalist" value="amd64"/>
+    <property name="sun.jnu.encoding" value="Cp1252"/>
+    <property name="java.class.path" value="C:\Users\new\.m2\repository\org\apache\maven\surefire\surefire-booter\3.5.3\surefire-booter-3.5.3.jar;C:\Users\new\.m2\repository\org\apache\maven\surefire\surefire-api\3.5.3\surefire-api-3.5.3.jar;C:\Users\new\.m2\repository\org\apache\maven\surefire\surefire-extensions-spi\3.5.3\surefire-extensions-spi-3.5.3.jar;C:\Users\new\.m2\repository\org\apache\maven\surefire\surefire-shared-utils\3.5.3\surefire-shared-utils-3.5.3.jar;C:\Users\new\.m2\repository\org\apache\maven\surefire\surefire-logger-api\3.5.3\surefire-logger-api-3.5.3.jar;C:\Users\new\IdeaProjects\MedicalProject\target\test-classes;C:\Users\new\IdeaProjects\MedicalProject\target\classes;C:\Users\new\.m2\repository\io\rest-assured\rest-assured\5.5.5\rest-assured-5.5.5.jar;C:\Users\new\.m2\repository\org\apache\groovy\groovy\4.0.22\groovy-4.0.22.jar;C:\Users\new\.m2\repository\org\apache\groovy\groovy-xml\4.0.22\groovy-xml-4.0.22.jar;C:\Users\new\.m2\repository\org\apache\httpcomponents\httpclient\4.5.13\httpclient-4.5.13.jar;C:\Users\new\.m2\repository\org\apache\httpcomponents\httpcore\4.4.13\httpcore-4.4.13.jar;C:\Users\new\.m2\repository\commons-logging\commons-logging\1.2\commons-logging-1.2.jar;C:\Users\new\.m2\repository\commons-codec\commons-codec\1.11\commons-codec-1.11.jar;C:\Users\new\.m2\repository\org\apache\httpcomponents\httpmime\4.5.13\httpmime-4.5.13.jar;C:\Users\new\.m2\repository\org\hamcrest\hamcrest\2.2\hamcrest-2.2.jar;C:\Users\new\.m2\repository\org\ccil\cowan\tagsoup\tagsoup\1.2.1\tagsoup-1.2.1.jar;C:\Users\new\.m2\repository\io\rest-assured\json-path\5.5.5\json-path-5.5.5.jar;C:\Users\new\.m2\repository\org\apache\groovy\groovy-json\4.0.22\groovy-json-4.0.22.jar;C:\Users\new\.m2\repository\io\rest-assured\rest-assured-common\5.5.5\rest-assured-common-5.5.5.jar;C:\Users\new\.m2\repository\io\rest-assured\xml-path\5.5.5\xml-path-5.5.5.jar;C:\Users\new\.m2\repository\org\apache\commons\commons-lang3\3.16.0\commons-lang3-3.16.0.jar;C:\Users\new\.m2\repository\net\lingala\zip4j\zip4j\2.11.5\zip4j-2.11.5.jar;C:\Users\new\.m2\repository\com\fasterxml\jackson\core\jackson-databind\2.19.1\jackson-databind-2.19.1.jar;C:\Users\new\.m2\repository\com\fasterxml\jackson\core\jackson-annotations\2.19.1\jackson-annotations-2.19.1.jar;C:\Users\new\.m2\repository\com\fasterxml\jackson\core\jackson-core\2.19.1\jackson-core-2.19.1.jar;C:\Users\new\.m2\repository\org\apache\poi\poi-ooxml\5.4.1\poi-ooxml-5.4.1.jar;C:\Users\new\.m2\repository\org\apache\poi\poi\5.4.1\poi-5.4.1.jar;C:\Users\new\.m2\repository\org\apache\commons\commons-math3\3.6.1\commons-math3-3.6.1.jar;C:\Users\new\.m2\repository\com\zaxxer\SparseBitSet\1.3\SparseBitSet-1.3.jar;C:\Users\new\.m2\repository\org\apache\poi\poi-ooxml-lite\5.4.1\poi-ooxml-lite-5.4.1.jar;C:\Users\new\.m2\repository\org\apache\xmlbeans\xmlbeans\5.3.0\xmlbeans-5.3.0.jar;C:\Users\new\.m2\repository\org\apache\commons\commons-compress\1.27.1\commons-compress-1.27.1.jar;C:\Users\new\.m2\repository\commons-io\commons-io\2.18.0\commons-io-2.18.0.jar;C:\Users\new\.m2\repository\com\github\virtuald\curvesapi\1.08\curvesapi-1.08.jar;C:\Users\new\.m2\repository\org\apache\logging\log4j\log4j-api\2.24.3\log4j-api-2.24.3.jar;C:\Users\new\.m2\repository\org\apache\commons\commons-collections4\4.4\commons-collections4-4.4.jar;C:\Users\new\.m2\repository\io\qameta\allure\allure-testng\2.29.1\allure-testng-2.29.1.jar;C:\Users\new\.m2\repository\io\qameta\allure\allure-java-commons\2.29.1\allure-java-commons-2.29.1.jar;C:\Users\new\.m2\repository\io\qameta\allure\allure-model\2.29.1\allure-model-2.29.1.jar;C:\Users\new\.m2\repository\io\qameta\allure\allure-test-filter\2.29.1\allure-test-filter-2.29.1.jar;C:\Users\new\.m2\repository\io\qameta\allure\allure-rest-assured\2.29.1\allure-rest-assured-2.29.1.jar;C:\Users\new\.m2\repository\io\qameta\allure\allure-attachments\2.29.1\allure-attachments-2.29.1.jar;C:\Users\new\.m2\repository\org\freemarker\freemarker\2.3.33\freemarker-2.3.33.jar;C:\Users\new\.m2\repository\org\testng\testng\7.11.0\testng-7.11.0.jar;C:\Users\new\.m2\repository\org\slf4j\slf4j-api\2.0.16\slf4j-api-2.0.16.jar;C:\Users\new\.m2\repository\org\jcommander\jcommander\1.83\jcommander-1.83.jar;C:\Users\new\.m2\repository\org\webjars\jquery\3.7.1\jquery-3.7.1.jar;C:\Users\new\.m2\repository\org\slf4j\slf4j-simple\2.0.17\slf4j-simple-2.0.17.jar;C:\Users\new\.m2\repository\com\microsoft\sqlserver\mssql-jdbc\12.10.1.jre11\mssql-jdbc-12.10.1.jre11.jar;C:\Users\new\.m2\repository\com\sun\mail\jakarta.mail\2.0.1\jakarta.mail-2.0.1.jar;C:\Users\new\.m2\repository\com\sun\activation\jakarta.activation\2.0.1\jakarta.activation-2.0.1.jar;C:\Users\new\.m2\repository\org\apache\maven\surefire\surefire-testng\3.5.3\surefire-testng-3.5.3.jar;C:\Users\new\.m2\repository\org\apache\maven\surefire\common-java5\3.5.3\common-java5-3.5.3.jar;C:\Users\new\.m2\repository\org\apache\maven\surefire\surefire-testng-utils\3.5.3\surefire-testng-utils-3.5.3.jar;C:\Users\new\.m2\repository\org\apache\maven\surefire\surefire-grouper\3.5.3\surefire-grouper-3.5.3.jar"/>
+    <property name="java.vm.vendor" value="Oracle Corporation"/>
+    <property name="sun.arch.data.model" value="64"/>
+    <property name="user.variant" value=""/>
+    <property name="java.vendor.url" value="https://java.oracle.com/"/>
+    <property name="user.timezone" value="Africa/Cairo"/>
+    <property name="os.name" value="Windows 11"/>
+    <property name="java.vm.specification.version" value="21"/>
+    <property name="sun.java.launcher" value="SUN_STANDARD"/>
+    <property name="user.country" value="US"/>
+    <property name="sun.boot.library.path" value="D:\Automation\Java\JDK-21\bin"/>
+    <property name="sun.java.command" value="org.apache.maven.surefire.booter.ForkedBooter C:\Users\new\AppData\Local\Temp\surefire12933771373477357957 2025-07-17T13-07-48_556-jvmRun1 surefire-20250717130748769_1tmp surefire_0-20250717130748769_2tmp"/>
+    <property name="jdk.debug" value="release"/>
+    <property name="surefire.test.class.path" value="C:\Users\new\IdeaProjects\MedicalProject\target\test-classes;C:\Users\new\IdeaProjects\MedicalProject\target\classes;C:\Users\new\.m2\repository\io\rest-assured\rest-assured\5.5.5\rest-assured-5.5.5.jar;C:\Users\new\.m2\repository\org\apache\groovy\groovy\4.0.22\groovy-4.0.22.jar;C:\Users\new\.m2\repository\org\apache\groovy\groovy-xml\4.0.22\groovy-xml-4.0.22.jar;C:\Users\new\.m2\repository\org\apache\httpcomponents\httpclient\4.5.13\httpclient-4.5.13.jar;C:\Users\new\.m2\repository\org\apache\httpcomponents\httpcore\4.4.13\httpcore-4.4.13.jar;C:\Users\new\.m2\repository\commons-logging\commons-logging\1.2\commons-logging-1.2.jar;C:\Users\new\.m2\repository\commons-codec\commons-codec\1.11\commons-codec-1.11.jar;C:\Users\new\.m2\repository\org\apache\httpcomponents\httpmime\4.5.13\httpmime-4.5.13.jar;C:\Users\new\.m2\repository\org\hamcrest\hamcrest\2.2\hamcrest-2.2.jar;C:\Users\new\.m2\repository\org\ccil\cowan\tagsoup\tagsoup\1.2.1\tagsoup-1.2.1.jar;C:\Users\new\.m2\repository\io\rest-assured\json-path\5.5.5\json-path-5.5.5.jar;C:\Users\new\.m2\repository\org\apache\groovy\groovy-json\4.0.22\groovy-json-4.0.22.jar;C:\Users\new\.m2\repository\io\rest-assured\rest-assured-common\5.5.5\rest-assured-common-5.5.5.jar;C:\Users\new\.m2\repository\io\rest-assured\xml-path\5.5.5\xml-path-5.5.5.jar;C:\Users\new\.m2\repository\org\apache\commons\commons-lang3\3.16.0\commons-lang3-3.16.0.jar;C:\Users\new\.m2\repository\net\lingala\zip4j\zip4j\2.11.5\zip4j-2.11.5.jar;C:\Users\new\.m2\repository\com\fasterxml\jackson\core\jackson-databind\2.19.1\jackson-databind-2.19.1.jar;C:\Users\new\.m2\repository\com\fasterxml\jackson\core\jackson-annotations\2.19.1\jackson-annotations-2.19.1.jar;C:\Users\new\.m2\repository\com\fasterxml\jackson\core\jackson-core\2.19.1\jackson-core-2.19.1.jar;C:\Users\new\.m2\repository\org\apache\poi\poi-ooxml\5.4.1\poi-ooxml-5.4.1.jar;C:\Users\new\.m2\repository\org\apache\poi\poi\5.4.1\poi-5.4.1.jar;C:\Users\new\.m2\repository\org\apache\commons\commons-math3\3.6.1\commons-math3-3.6.1.jar;C:\Users\new\.m2\repository\com\zaxxer\SparseBitSet\1.3\SparseBitSet-1.3.jar;C:\Users\new\.m2\repository\org\apache\poi\poi-ooxml-lite\5.4.1\poi-ooxml-lite-5.4.1.jar;C:\Users\new\.m2\repository\org\apache\xmlbeans\xmlbeans\5.3.0\xmlbeans-5.3.0.jar;C:\Users\new\.m2\repository\org\apache\commons\commons-compress\1.27.1\commons-compress-1.27.1.jar;C:\Users\new\.m2\repository\commons-io\commons-io\2.18.0\commons-io-2.18.0.jar;C:\Users\new\.m2\repository\com\github\virtuald\curvesapi\1.08\curvesapi-1.08.jar;C:\Users\new\.m2\repository\org\apache\logging\log4j\log4j-api\2.24.3\log4j-api-2.24.3.jar;C:\Users\new\.m2\repository\org\apache\commons\commons-collections4\4.4\commons-collections4-4.4.jar;C:\Users\new\.m2\repository\io\qameta\allure\allure-testng\2.29.1\allure-testng-2.29.1.jar;C:\Users\new\.m2\repository\io\qameta\allure\allure-java-commons\2.29.1\allure-java-commons-2.29.1.jar;C:\Users\new\.m2\repository\io\qameta\allure\allure-model\2.29.1\allure-model-2.29.1.jar;C:\Users\new\.m2\repository\io\qameta\allure\allure-test-filter\2.29.1\allure-test-filter-2.29.1.jar;C:\Users\new\.m2\repository\io\qameta\allure\allure-rest-assured\2.29.1\allure-rest-assured-2.29.1.jar;C:\Users\new\.m2\repository\io\qameta\allure\allure-attachments\2.29.1\allure-attachments-2.29.1.jar;C:\Users\new\.m2\repository\org\freemarker\freemarker\2.3.33\freemarker-2.3.33.jar;C:\Users\new\.m2\repository\org\testng\testng\7.11.0\testng-7.11.0.jar;C:\Users\new\.m2\repository\org\slf4j\slf4j-api\2.0.16\slf4j-api-2.0.16.jar;C:\Users\new\.m2\repository\org\jcommander\jcommander\1.83\jcommander-1.83.jar;C:\Users\new\.m2\repository\org\webjars\jquery\3.7.1\jquery-3.7.1.jar;C:\Users\new\.m2\repository\org\slf4j\slf4j-simple\2.0.17\slf4j-simple-2.0.17.jar;C:\Users\new\.m2\repository\com\microsoft\sqlserver\mssql-jdbc\12.10.1.jre11\mssql-jdbc-12.10.1.jre11.jar;C:\Users\new\.m2\repository\com\sun\mail\jakarta.mail\2.0.1\jakarta.mail-2.0.1.jar;C:\Users\new\.m2\repository\com\sun\activation\jakarta.activation\2.0.1\jakarta.activation-2.0.1.jar;"/>
+    <property name="sun.cpu.endian" value="little"/>
+    <property name="user.home" value="C:\Users\new"/>
+    <property name="user.language" value="en"/>
+    <property name="java.specification.vendor" value="Oracle Corporation"/>
+    <property name="java.version.date" value="2025-04-15"/>
+    <property name="java.home" value="D:\Automation\Java\JDK-21"/>
+    <property name="file.separator" value="\"/>
+    <property name="basedir" value="C:\Users\new\IdeaProjects\MedicalProject"/>
+    <property name="java.vm.compressedOopsMode" value="Zero based"/>
+    <property name="line.separator" value="&#10;"/>
+    <property name="java.vm.specification.vendor" value="Oracle Corporation"/>
+    <property name="java.specification.name" value="Java Platform API Specification"/>
+    <property name="user.script" value=""/>
+    <property name="sun.management.compiler" value="HotSpot 64-Bit Tiered Compilers"/>
+    <property name="java.runtime.version" value="21.0.7+8-LTS-245"/>
+    <property name="user.name" value="new"/>
+    <property name="stdout.encoding" value="Cp1252"/>
+    <property name="path.separator" value=";"/>
+    <property name="os.version" value="10.0"/>
+    <property name="java.runtime.name" value="Java(TM) SE Runtime Environment"/>
+    <property name="file.encoding" value="UTF-8"/>
+    <property name="java.vm.name" value="Java HotSpot(TM) 64-Bit Server VM"/>
+    <property name="localRepository" value="C:\Users\new\.m2\repository"/>
+    <property name="java.vendor.url.bug" value="https://bugreport.java.com/bugreport/"/>
+    <property name="java.io.tmpdir" value="C:\Users\new\AppData\Local\Temp\"/>
+    <property name="java.version" value="21.0.7"/>
+    <property name="user.dir" value="C:\Users\new\IdeaProjects\MedicalProject"/>
+    <property name="os.arch" value="amd64"/>
+    <property name="java.vm.specification.name" value="Java Virtual Machine Specification"/>
+    <property name="sun.os.patch.level" value=""/>
+    <property name="native.encoding" value="Cp1252"/>
+    <property name="java.library.path" value="D:\Automation\Java\JDK-21\bin;C:\WINDOWS\Sun\Java\bin;C:\WINDOWS\system32;C:\WINDOWS;C:\Python313\Scripts\;C:\Python313\;C:\WINDOWS\system32;C:\WINDOWS;C:\WINDOWS\System32\Wbem;C:\WINDOWS\System32\WindowsPowerShell\v1.0\;C:\WINDOWS\System32\OpenSSH\;D:\Automation\Maven\apache-maven-3.9.9\bin;D:\Automation\Java\JDK-21\bin;C:\Program Files\dotnet\;C:\Program Files\Docker\Docker\resources\bin;C:\Program Files\Git\cmd;D:\Automation\NodeJS\;C:\ProgramData\chocolatey\bin;C:\Users\new\AppData\Local\Microsoft\WindowsApps;C:\Users\new\AppData\Local\GitHubDesktop\bin;C:\Users\new\AppData\Roaming\npm;C:\Users\new\AppData\Local\Programs\Fiddler;C:\Users\new\AppData\Local\JetBrains\Toolbox\scripts;C:\Users\new\.dotnet\tools;."/>
+    <property name="java.vm.info" value="mixed mode, sharing"/>
+    <property name="stderr.encoding" value="Cp1252"/>
+    <property name="java.vendor" value="Oracle Corporation"/>
+    <property name="java.vm.version" value="21.0.7+8-LTS-245"/>
+    <property name="sun.io.unicode.encoding" value="UnicodeLittle"/>
+    <property name="java.class.version" value="65.0"/>
+  </properties>
+  <testcase name="sendAllAttributes" classname="Tests.Service_TCs.Create.CreateService" time="1.252">
+    <system-out><![CDATA[✅ DB Connection successful
+✅ Backend is up on port 5251
+Request method:	POST
+Request URI:	http://localhost:5251/api/Service/Insert
+Proxy:			<none>
+Request params:	<none>
+Query params:	<none>
+Form params:	<none>
+Path params:	<none>
+Headers:		Accept=*/*
+				Content-Type=application/json
+Cookies:		<none>
+Multiparts:		<none>
+Body:
+{
+    "code": "ValidCode",
+    "nameEn": "ValidNameEn123",
+    "nameAr": "اسم_عربي",
+    "titleEn": "ValidTitleEn123",
+    "titleAr": "عنوان_عربي",
+    "abbreviationEn": "ValidAbbreviationEn123",
+    "abbreviationAr": "اختصار عربي",
+    "effectiveDate": "2025-07-19",
+    "groupId": "04ee423e-f36b-1410-841a-0047d38b2221",
+    "specialtyId": "10ee423e-f36b-1410-841a-0047d38b2221",
+    "typeId": "1cee423e-f36b-1410-841a-0047d38b2221",
+    "statusId": 1,
+    "referenceAverageCost": 100.0,
+    "customPropertyValues": [
+        "c3ee423e-f36b-1410-841a-0047d38b2221"
+    ]
+}
+HTTP/1.1 400 Bad Request
+Content-Type: application/json; charset=utf-8
+Date: Thu, 17 Jul 2025 10:07:51 GMT
+Server: Kestrel
+Transfer-Encoding: chunked
+
+{
+    "data": {
+        "row": null,
+        "errors": [
+            {
+                "column": "Code",
+                "message": "Code already exists, please enter a new one",
+                "messageAr": "Code already exists, please enter a new one"
+            },
+            {
+                "column": "NameEn",
+                "message": "English Name already exists, please enter a new one",
+                "messageAr": "English Name already exists, please enter a new one"
+            },
+            {
+                "column": "NameAr",
+                "message": "Arabic Name already exists, please enter a new one",
+                "messageAr": "Arabic Name already exists, please enter a new one"
+            },
+            {
+                "column": "TitleEn",
+                "message": "English Title already exists, please enter a new one",
+                "messageAr": "English Title already exists, please enter a new one"
+            },
+            {
+                "column": "TitleAr",
+                "message": "Arabic Title already exists, please enter a new one",
+                "messageAr": "Arabic Title already exists, please enter a new one"
+            },
+            {
+                "column": "AbbreviationEn",
+                "message": "English Abbreviation already exists, please enter a new one",
+                "messageAr": "English Abbreviation already exists, please enter a new one"
+            },
+            {
+                "column": "AbbreviationAr",
+                "message": "Arabic Abbreviation already exists, please enter a new one",
+                "messageAr": "Arabic Abbreviation already exists, please enter a new one"
+            }
+        ],
+        "isValid": false
+    },
+    "status": 400,
+    "errors": null,
+    "message": null
+}
+]]></system-out>
+    <system-err><![CDATA[[main] WARN org.testng.TestNG - Ignoring duplicate listener : io.qameta.allure.testng.AllureTestNg
+[main] WARN org.testng.TestNG - Ignoring duplicate listener : io.qameta.allure.testng.AllureTestNg
+[main] WARN org.testng.TestNG - Ignoring duplicate listener : io.qameta.allure.testng.AllureTestNg
+]]></system-err>
+  </testcase>
+</testsuite>

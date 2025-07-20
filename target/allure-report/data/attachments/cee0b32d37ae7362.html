@@ -1,0 +1,31 @@
+<div>POST to http://localhost:5251/api/Service/Insert</div>
+
+    <h4>Body</h4>
+    <div>
+    <pre class="preformated-text">
+{
+    &quot;code&quot;: &quot;SVC_001&quot;,
+    &quot;nameEn&quot;: &quot;Service 001&quot;,
+    &quot;titleEn&quot;: &quot;Title 001&quot;,
+    &quot;titleAr&quot;: &quot;عنوان ١&quot;
+}    </pre>
+    </div>
+
+    <h4>Headers</h4>
+    <div>
+            <div>Accept: */*</div>
+            <div>Content-Type: application/json</div>
+    </div>
+
+
+
+    <h4>Curl</h4>
+    <div>
+        curl -v -X POST &#39;http://localhost:5251/api/Service/Insert&#39; -H &#39;Accept: */*&#39; -H &#39;Content-Type: application/json&#39; -d &#39;{
+    &quot;code&quot;: &quot;SVC_001&quot;,
+    &quot;nameEn&quot;: &quot;Service 001&quot;,
+    &quot;titleEn&quot;: &quot;Title 001&quot;,
+    &quot;titleAr&quot;: &quot;عنوان ١&quot;
+}&#39;
+    </div>
+
