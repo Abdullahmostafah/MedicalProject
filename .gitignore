@@ -1,12 +1,12 @@
 ### Build Directories ###
 ### Ignore all target and build folders ###
-target/
-build/
+#target/
+#build/
 ### Allow target/build inside src/main and src/test ###
-!src/main/**/target/
-!src/test/**/target/
-!src/main/**/build/
-!src/test/**/build/
+#!src/main/**/target/
+#!src/test/**/target/
+#!src/main/**/build/
+#!src/test/**/build/
 
 ### Maven Wrapper ###
 !.mvn/wrapper/maven-wrapper.jar
@@ -19,7 +19,7 @@ build/
 
 ### Allure Results & Reports ###
 allure-results/
-allure-report/
+#allure-report/
 allure-history/ # used when publishing Allure to GitHub Pages
 .history/
 
@@ -90,5 +90,5 @@ docker-compose*.log
 *.orig
 
 ### Ignore all folders (**) but allow .gitkeep files inside them ###
-**/
-!**/.gitkeep
+#**/
+#!**/.gitkeep
