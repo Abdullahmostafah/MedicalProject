@@ -1,32 +1,40 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project xmlns="http://maven.apache.org/POM/4.0.0"
          xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
-         xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+         xsi:schemaLocation="http://maven.apache.org/POM/4.0.0
+                             http://maven.apache.org/xsd/maven-4.0.0.xsd">
 
     <modelVersion>4.0.0</modelVersion>
-
     <groupId>org.example</groupId>
     <artifactId>MedicalProject</artifactId>
     <version>1.0-SNAPSHOT</version>
 
     <properties>
-        <!-- Java and encoding setup -->
+        <!-- Java configuration -->
         <maven.compiler.source>21</maven.compiler.source>
         <maven.compiler.target>21</maven.compiler.target>
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
 
-        <!-- Versions for dependencies -->
+        <!-- Dependency versions -->
         <restassured.version>5.5.5</restassured.version>
-        <testng.version>7.10.2</testng.version> <!-- Latest TestNG -->
-        <jackson.version>2.15.3</jackson.version>
-        <poi.version>5.2.5</poi.version>
-        <slf4j.version>2.0.13</slf4j.version>
-        <sql.version>12.6.1.jre11</sql.version>
+        <testng.version>7.11.0</testng.version>
+        <jackson.version>2.19.1</jackson.version>
+        <poi.version>5.4.1</poi.version>
+        <slf4j.version>2.0.17</slf4j.version>
+        <sql.version>12.10.1.jre11</sql.version>
         <allure.version>2.29.1</allure.version>
         <jakarta.mail.version>2.0.1</jakarta.mail.version>
+
+        <!-- Plugin versions -->
+        <allure.plugin.version>2.15.2</allure.plugin.version>
+        <exec.plugin.version>3.5.1</exec.plugin.version>
+        <compiler.plugin.version>3.14.0</compiler.plugin.version>
+        <surefire.plugin.version>3.5.3</surefire.plugin.version>
+        <enforcer.plugin.version>3.6.1</enforcer.plugin.version>
     </properties>
 
     <dependencies>
+
         <!-- REST Assured for API testing -->
         <dependency>
             <groupId>io.rest-assured</groupId>
@@ -34,59 +42,65 @@
             <version>${restassured.version}</version>
         </dependency>
 
-        <!-- Jackson for JSON handling -->
+
+
+
+        <!-- pom.xml -->
+        <dependency>
+            <groupId>net.lingala.zip4j</groupId>
+            <artifactId>zip4j</artifactId>
+            <version>2.11.5</version>
+        </dependency>
+        <!-- Jackson for JSON -->
         <dependency>
             <groupId>com.fasterxml.jackson.core</groupId>
             <artifactId>jackson-databind</artifactId>
             <version>${jackson.version}</version>
         </dependency>
 
-        <!-- Apache POI for Excel support (if still used) -->
+        <!-- Apache POI for Excel -->
         <dependency>
             <groupId>org.apache.poi</groupId>
             <artifactId>poi-ooxml</artifactId>
             <version>${poi.version}</version>
         </dependency>
 
-        <!-- Allure support for TestNG -->
+        <!-- Allure TestNG -->
         <dependency>
             <groupId>io.qameta.allure</groupId>
             <artifactId>allure-testng</artifactId>
             <version>${allure.version}</version>
-            <scope>test</scope>
         </dependency>
 
-        <!-- Allure REST Assured integration -->
+        <!-- Allure Rest-Assured -->
         <dependency>
             <groupId>io.qameta.allure</groupId>
             <artifactId>allure-rest-assured</artifactId>
             <version>${allure.version}</version>
-            <scope>test</scope>
         </dependency>
 
-        <!-- TestNG (latest stable) -->
+        <!-- TestNG -->
         <dependency>
             <groupId>org.testng</groupId>
             <artifactId>testng</artifactId>
             <version>${testng.version}</version>
-            <scope>test</scope>
         </dependency>
 
-        <!-- SLF4J for logging -->
+        <!-- SLF4J logging -->
         <dependency>
             <groupId>org.slf4j</groupId>
             <artifactId>slf4j-simple</artifactId>
             <version>${slf4j.version}</version>
-            <scope>test</scope>
         </dependency>
 
-        <!-- SQL Server JDBC driver -->
+        <!-- MS SQL JDBC driver -->
         <dependency>
             <groupId>com.microsoft.sqlserver</groupId>
             <artifactId>mssql-jdbc</artifactId>
             <version>${sql.version}</version>
         </dependency>
 
+        <!-- Jakarta Mail -->
         <dependency>
             <groupId>com.sun.mail</groupId>
             <artifactId>jakarta.mail</artifactId>
@@ -95,39 +109,83 @@
     </dependencies>
 
     <build>
+        <!-- Ensure main and test directories are correct -->
+        <sourceDirectory>src/main/java</sourceDirectory>
+        <testSourceDirectory>src/test/java</testSourceDirectory>
+
         <plugins>
-            <!-- Compiler plugin to use Java 21 with preview features -->
+
+            <!-- Allure Maven Plugin - ADD THIS -->
+            <plugin>
+                <groupId>io.qameta.allure</groupId>
+                <artifactId>allure-maven</artifactId>
+                <version>${allure.plugin.version}</version>
+                <executions>
+                    <execution>
+                        <id>allure-report</id>
+                        <phase>verify</phase>
+                        <goals>
+                            <goal>report</goal>
+                        </goals>
+                    </execution>
+                </executions>
+                <configuration>
+                    <reportDirectory>${project.build.directory}/allure-report</reportDirectory>
+                    <resultsDirectory>${project.build.directory}/allure-results</resultsDirectory>
+                    <!-- Do NOT add <cleanReportDirectory> here -->
+                </configuration>
+            </plugin>
+
+            <!-- Exec Plugin to run utility classes (eg: PasswordEncryptor) -->
+            <plugin>
+                <groupId>org.codehaus.mojo</groupId>
+                <artifactId>exec-maven-plugin</artifactId>
+                <version>${exec.plugin.version}</version>
+                <configuration>
+                    <mainClass>Utils.PasswordEncryptor</mainClass>
+                    <arguments>
+                        <!-- optional: add program args here -->
+                    </arguments>
+                </configuration>
+            </plugin>
+
+            <!-- Compiler plugin -->
             <plugin>
                 <groupId>org.apache.maven.plugins</groupId>
                 <artifactId>maven-compiler-plugin</artifactId>
-                <version>3.11.0</version>
+                <version>${compiler.plugin.version}</version>
                 <configuration>
-                    <source>21</source>
-                    <target>21</target>
+                    <source>${maven.compiler.source}</source>
+                    <target>${maven.compiler.target}</target>
                     <compilerArgs>
                         <arg>--enable-preview</arg>
                     </compilerArgs>
                 </configuration>
             </plugin>
 
-            <!-- Surefire to run TestNG tests -->
+            <!-- Surefire for TestNG with preview enabled -->
             <plugin>
                 <groupId>org.apache.maven.plugins</groupId>
                 <artifactId>maven-surefire-plugin</artifactId>
-                <version>3.2.5</version>
+                <version>${surefire.plugin.version}</version>
                 <configuration>
-                    <useModulePath>false</useModulePath>
                     <suiteXmlFiles>
-                        <suiteXmlFile>TestNG.xml</suiteXmlFile> <!-- Add your suite if applicable -->
+                        <suiteXmlFile>TestNG.xml</suiteXmlFile>
                     </suiteXmlFiles>
+                    <systemPropertyVariables>
+                        <allure.results.directory>${project.build.directory}/allure-results</allure.results.directory>
+                    </systemPropertyVariables>
+                    <argLine>
+                        --enable-preview
+                    </argLine>
                 </configuration>
             </plugin>
 
-            <!-- Enforce Java version -->
+            <!-- Enforce Java version 21 -->
             <plugin>
                 <groupId>org.apache.maven.plugins</groupId>
                 <artifactId>maven-enforcer-plugin</artifactId>
-                <version>3.3.0</version>
+                <version>${enforcer.plugin.version}</version>
                 <executions>
                     <execution>
                         <id>enforce-java</id>

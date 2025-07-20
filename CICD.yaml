@@ -1,0 +1,61 @@
+  pipeline {
+    agent any
+
+    tools {
+    maven 'maven-3.9.6'  // the Maven tool name from Jenkins config
+    jdk 'jdk-21'         // your JDK version
+    }
+
+    environment {
+    ALLURE_RESULTS_DIR = 'target/allure-results'
+    ALLURE_REPORT_DIR = 'target/allure-report'
+    }
+
+    stages {
+    stage('Checkout') {
+    steps {
+  git branch: 'main', url: 'https://github.com/your-org/your-repo.git'
+  }
+  }
+
+    stage('Build & Test') {
+    steps {
+    sh 'mvn clean test'
+  }
+  }
+
+    stage('Generate Allure Report') {
+    steps {
+    sh 'mvn allure:report'
+  }
+  }
+
+    stage('Publish Allure Report') {
+    steps {
+  allure includeProperties: false, jdk: '', results: [[path: 'target/allure-results']]
+  }
+  }
+
+    stage('Send Email Summary') {
+    steps {
+  mail to: 'qa-team@example.com',
+             subject: "API Test Report - ${env.BUILD_TAG}",
+             mimeType: 'text/html',
+             body: getAllureSummary()
+  }
+  }
+  }
+
+    post {
+    always {
+    junit 'target/surefire-reports/*.xml'
+    cleanWs()
+  }
+  }
+  }
+
+    def getAllureSummary() {
+    return readFile('target/allure-report/widgets/summary.json')
+    .replaceAll('["{}]', '')  // basic formatting
+    .replace(',', '<br>')
+  }
