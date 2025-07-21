@@ -1,94 +1,87 @@
-### Build Directories ###
-### Ignore all target and build folders ###
-#target/
-#build/
-### Allow target/build inside src/main and src/test ###
-#!src/main/**/target/
-#!src/test/**/target/
-#!src/main/**/build/
-#!src/test/**/build/
+#############################################
+###   Allow only essential project files  ###
+#############################################
 
-### Maven Wrapper ###
-!.mvn/wrapper/maven-wrapper.jar
+!pom.xml
+!testng.xml
+!mvnw
+!mvnw.bat
+!allure-wrapper.bat
+!src/
+!src/**
 
-### Logs & Temp Files ###
+#############################################
+###   Ignore everything else by default   ###
+#############################################
+
+*
+
+#############################################
+###           Ignore IDE Configs          ###
+#############################################
+
+.idea/
+*.iml
+*.ipr
+*.iws
+out/
+.classpath
+.project
+.settings/
+.vscode/
+
+#############################################
+###         Build and Temp Files          ###
+#############################################
+
+target/
+build/
+*.class
 *.log
 *.tmp
 *.bak
 *.swp
+*.orig
 
-### Allure Results & Reports ###
-allure-results/
-#allure-report/
-allure-history/ # used when publishing Allure to GitHub Pages
-.history/
+#############################################
+###    Ignore Test coverage / cache       ###
+#############################################
 
-### IntelliJ IDEA ###
-.idea/
-.idea/modules.xml
-.idea/jarRepositories.xml
-.idea/compiler.xml
-.idea/libraries/
-*.iws
-*.iml
-*.ipr
-out/
-
-### Eclipse ##
-.apt_generated
-.classpath
-.factorypath
-.project
-.settings/
-.springBeans
-.sts4-cache
-
-### NetBeans ###
-/nbproject/private/
-/nbbuild/
-/dist/
-/nbdist/
-/.nb-gradle/
-
-### Visual Studio Code ###
-.vscode/
-
-### OS-Specific Files ###
-.DS_Store
-Thumbs.db
-
-### Test Coverage / Caches ###
 coverage/
 .cache/
 jacoco.exec
 
-### GitHub Actions ###
-.github/workflows/*.log
-.github/workflows/.DS_Store
+#############################################
+###         Ignore Allure Reports         ###
+#############################################
 
-### Jenkins / CI Tools ###
+allure-results/
+allure-report/
+allure-history/
+.history/
+
+#############################################
+###            Ignore Docker              ###
+#############################################
+
+.docker/
+*.dockerfile
+docker-compose*
+.env
+.env.*
+
+#############################################
+###          Ignore CI/CD tools           ###
+#############################################
+
+.github/
 .pipeline/
 *.jenkinsfile
 *.groovy
 
-### Docker ###
-docker-compose.override.yml
-docker-compose*.log
-.docker/
-*.dockerfile
-.env
-.env.
+#############################################
+###        Ignore OS System Files         ###
+#############################################
 
-### Other (optional/advanced) ###
-*.class
-*.exe
-*.dll
-*.so
-*.dylib
-
-### System backup / metadata ###
-*.orig
-
-### Ignore all folders (**) but allow .gitkeep files inside them ###
-#**/
-#!**/.gitkeep
+.DS_Store
+Thumbs.db
